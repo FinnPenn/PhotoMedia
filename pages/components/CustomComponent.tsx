@@ -98,7 +98,7 @@ const CustomComponent: React.FC = () => {
 
     return (
         <div>
-            <div id="modal" className="hidden justify-center items-center relative z-50 w-screen h-screen backdrop-blur-lg">
+            <div id="modal" className="hidden justify-center items-center absolute z-50 w-screen h-screen backdrop-blur-lg">
                 <div className="relative w-3/4 h-auto aspect-video bg-black">
                     <div className="info-container">
                         <span id="closeModal" className="cursor-pointer self-end text-4xl pb-12" aria-hidden="true">&times;</span>
