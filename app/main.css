@@ -24,14 +24,6 @@ body {
     overflow: hidden;
 }
 
-.btn-primary {
-    padding: 8px;
-    border-radius: 10px;
-    background-color: white;
-    color: #030712;
-
-}
-
 .header-link {
     display: block;
     padding-top: 8px;

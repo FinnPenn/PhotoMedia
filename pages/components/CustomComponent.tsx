@@ -1,8 +1,9 @@
-// /pages/components/CustomComponent.tsx
+// /pages/components/Navbar.tsx
 import React, { useEffect } from 'react';
 
 const CustomComponent: React.FC = () => {
     useEffect(() => {
+
         const track = document.getElementById("image-track")!;
 
         const handleOnDown = (e: MouseEvent): void => {
@@ -12,19 +13,29 @@ const CustomComponent: React.FC = () => {
         const handleOnUp = (): void => {
             track.dataset.mouseDownAt = "0";
             track.dataset.prevPercentage = track.dataset.percentage;
+            // console.log(track.dataset.prevPercentage);
         };
 
         const handleOnMove = (e: MouseEvent): void => {
             if (track.dataset.mouseDownAt === "0") return;
 
-            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt!) - e.clientX;
             const maxDelta = window.innerWidth / 2;
 
+            // console.log(mouseDelta);
+            // console.log(maxDelta);
+
             const percentage = (mouseDelta / maxDelta) * -100;
-            const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage;
+            // console.log(percentage);
+
+            const nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage!) + percentage;
+            // console.log(nextPercentageUnconstrained);
+
             const nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
             track.dataset.percentage = nextPercentage.toString();
+
+            console.log(nextPercentage);
 
             track.animate(
                 {
@@ -33,7 +44,8 @@ const CustomComponent: React.FC = () => {
                 { duration: 1200, fill: "forwards" }
             );
 
-            const images = track.getElementsByClassName("image");
+
+            const images = track.getElementsByClassName("image")!;
             for (const image of images) {
                 image.animate(
                     {
@@ -48,15 +60,15 @@ const CustomComponent: React.FC = () => {
 
         window.onmousedown = (e: MouseEvent): void => handleOnDown(e);
 
-        // window.ontouchstart = (e: TouchEvent): void => handleOnDown(e.touches[0]);
+        window.ontouchstart = (e: TouchEvent): void => handleOnDown(e.touches[0]);
 
         window.onmouseup = (e: MouseEvent): void => handleOnUp(e);
 
-        // window.ontouchend = (e: TouchEvent): void => handleOnUp(e.touches[0]);
+        window.ontouchend = (e: TouchEvent): void => handleOnUp(e.touches[0]);
 
         window.onmousemove = (e: MouseEvent): void => handleOnMove(e);
 
-        // window.ontouchmove = (e: TouchEvent): void => handleOnMove(e.touches[0]);
+        window.ontouchmove = (e: TouchEvent): void => handleOnMove(e.touches[0]);
 
 
 
@@ -67,7 +79,7 @@ const CustomComponent: React.FC = () => {
         const modalImg = document.getElementById("modalImg")!;
 
         for (let i = 0; i < imgs.length; i++) {
-            const img: Element = imgs[i];
+            const img = imgs[i];
 
             img.onclick = function () {
                 modal.style.display = "flex";
@@ -86,17 +98,6 @@ const CustomComponent: React.FC = () => {
 
     return (
         <div>
-            <div className="absolute z-10 w-full">
-                <ul className="flex justify-start items-center p-8 font-bold text-white">
-                    <li>
-                        <a href="upload.html" className="btn-primary">Upload</a>
-                    </li>
-                    <li>
-                        <a href="mediathek.html" className="hover-link">Mediathek</a>
-                    </li>
-                </ul>
-            </div>
-
             <div id="modal" className="hidden justify-center items-center relative z-50 w-screen h-screen backdrop-blur-lg">
                 <div className="relative w-3/4 h-auto aspect-video bg-black">
                     <div className="info-container">
