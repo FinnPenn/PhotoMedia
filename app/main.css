@@ -21,7 +21,7 @@ body {
     background-color: #030712;
     color: white;
     margin: 0rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .header-link {
@@ -96,4 +96,15 @@ body {
     left: 0;
     z-index: 20;
     transform: translate(0%, 0%);
+}
+
+.toggle-animation {
+    position: relative;
+    animation-name: toggler;
+    animation-duration: 1s;
+}
+
+@keyframes toggler {
+    from {  left: 0  }
+    to   {  left: 100% }
 }
