@@ -101,10 +101,11 @@ body {
 .toggle-animation {
     position: relative;
     animation-name: toggler;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes toggler {
     from {  left: 0  }
-    to   {  left: 100% }
+    to   {  left: calc(100% - 1.75rem) }
 }

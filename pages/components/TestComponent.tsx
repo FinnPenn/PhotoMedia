@@ -15,8 +15,8 @@ const CustomComponent: React.FC = () => {
     return (
         <div>
             <div className="flex justify-center items-center h-full w-full">
-                <div className="bg-slate-300 w-48 h-14 rounded-full p-2">
-                    <div id="toggle" className="bg-slate-900 rounded-full h-14 w-14"></div>
+                <div className="bg-slate-300 w-16 h-7 rounded-full p-1">
+                    <div id="toggle" className="bg-slate-900 rounded-full h-7 w-7"></div>
                 </div>
             </div>
         </div>
