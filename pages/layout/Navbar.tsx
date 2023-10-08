@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import Link from 'next/link'
 
 const Upload: React.FC = () => {
     // const [style, setStyle] = useState("bg-none text-white");
@@ -44,13 +45,13 @@ const Upload: React.FC = () => {
         <div className="relative z-10 w-full top-0">
             <ul className="flex justify-start items-center p-8 font-bold text-white">
                 <li>
-                    <a id="Home" href="/" className="nav-item hover-link">Home</a>
+                    <Link id="Home" href="/" className="nav-item hover-link">Home</Link>
                 </li>
                 <li>
-                    <a id="Upload" href="/upload" className="nav-item hover-link">Upload</a>
+                <Link id="Upload" href="/upload" className="nav-item hover-link">Upload</Link>
                 </li>
                 <li>
-                    <a id="Media" href="/mediathek" className="nav-item hover-link">Mediathek</a>
+                    <Link id="Media" href="/mediathek" className="nav-item hover-link">Mediathek</Link>
                 </li>
             </ul>
         </div>
