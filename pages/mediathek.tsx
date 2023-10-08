@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "@/pages/layout/Navbar";
 import TestComponent from "@/pages/components/TestComponent";
+import Image from 'next/image'
 
 const Upload: React.FC = () => { 
 
@@ -55,16 +56,16 @@ const Upload: React.FC = () => {
         <div id="media_more" className="hidden justify-center items-center w-full h-full pt-8">
             <div className="grid grid-cols-2 grid-rows-1 w-1/2 h-auto gap-4 p-4">
                 <div className="w-full h-full col-start-1 col-span-1 grid grid-cols-2 grid-rows-2 gap-4">
-                    <img className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/1.png" alt="" />
-                    <img className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/2.png" alt="" />
-                    <img className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/3.png" alt="" />
-                    <img className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/4.png" alt="" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/1.png" alt="1" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/2.png" alt="2" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/3.png" alt="3" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/4.png" alt="4" />
                 </div>
                 <div className="w-full h-full col-start-2 col-span-1 grid grid-cols-2 grid-rows-2 gap-4">
-                    <img className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/5.png" alt="" />
-                    <img className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/6.png" alt="" />
-                    <img className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/7.png" alt="" />
-                    <img className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/8.png" alt="" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/5.png" alt="5" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/6.png" alt="6" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/7.png" alt="7" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/8.png" alt="8" />
                 </div>
 
             </div>
