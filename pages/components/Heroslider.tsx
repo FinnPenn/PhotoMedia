@@ -112,16 +112,18 @@ const CustomComponent: React.FC = () => {
             </div>
 
             <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-                <Image className="image" alt="image 1" src="../imgs/1.png" draggable="false"/>
-                <Image className="image" alt="image 2" src="../imgs/2.png" draggable="false"/>
-                <Image className="image" alt="image 3" src="../imgs/3.png" draggable="false"/>
-                <Image className="image" alt="image 4" src="../imgs/4.png" draggable="false"/>
-                <Image className="image" alt="image 5" src="../imgs/5.png" draggable="false"/>
-                <Image className="image" alt="image 6" src="../imgs/6.png" draggable="false"/>
-                <Image className="image" alt="image 7" src="../imgs/7.png" draggable="false"/>
-                <Image className="image" alt="image 8" src="../imgs/8.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 1" src="/imgs/1.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 2" src="/imgs/2.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 3" src="/imgs/3.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 4" src="/imgs/4.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 5" src="/imgs/5.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 6" src="/imgs/6.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 7" src="/imgs/7.png" draggable="false"/>
+                <Image className="image" height={720} width={1280} alt="image 8" src="/imgs/8.png" draggable="false"/>
+
 
                 
+
             </div>
         </div>
     );
