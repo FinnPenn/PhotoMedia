@@ -76,14 +76,14 @@ const CustomComponent: React.FC = () => {
 
         const imgs = document.getElementsByClassName("image")!;
         const modal = document.getElementById("modal")!;
-        const modalImg = document.getElementById("modalImg")!;
+        const modalImg = document.getElementById("modalImg") as HTMLImageElement;
 
         for (let i = 0; i < imgs.length; i++) {
-            const img = imgs[i];
+            const img = imgs[i] as HTMLImageElement;
 
-            img.onclick = function () {
+            img.onclick = () => {
                 modal.style.display = "flex";
-                modalImg.src = this.src;
+                modalImg.src = img.src;
             };
         }
 
