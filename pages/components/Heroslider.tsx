@@ -45,15 +45,15 @@ const CustomComponent: React.FC = () => {
             );
 
 
-            const images = track.getElementsByClassName("image")!;
-            for (const image of images) {
-                image.animate(
-                    {
-                        objectPosition: `${100 + nextPercentage}% center`,
-                    },
-                    { duration: 1200, fill: "forwards" }
-                );
-            }
+            const images = Array.from(track.getElementsByClassName("image"));
+                for (const image of images) {
+                    image.animate(
+                        {
+                            objectPosition: `${100 + nextPercentage}% center`,
+                        },
+                        { duration: 1200, fill: "forwards" }
+                    );
+                }
         };
 
         /* -- Had to add extra lines for touch events -- */
