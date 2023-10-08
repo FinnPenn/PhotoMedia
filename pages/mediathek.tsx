@@ -34,19 +34,19 @@ const Upload: React.FC = () => {
         <h2 className="text-5xl px-20 pb-0 pt-4">Cyberpunk</h2>
         <div id="media_short" className="flex justify-center items-center w-full h-full pt-8">
             <div className="grid grid-cols-2 grid-rows-1 w-1/2 h-auto gap-4 p-4">
-                <img className="w-full h-full aspect-square object-cover col-start-1 col-span-1 rounded-3xl" src="../imgs/1.png" />
+                <Image height={720} width={1280} className="w-full h-full aspect-square object-cover col-start-1 col-span-1 rounded-3xl" src="/imgs/1.png" alt="1"/>
                 <div className="w-full h-full col-start-2 col-span-1 grid grid-cols-2 grid-rows-2 gap-2">
-                    <img className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/2.png" alt="" />
-                    <img className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/3.png" alt="" />
-                    <img className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/4.png" alt="" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/2.png" alt="2" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/3.png" alt="3" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/4.png" alt="4" />
                     <div id="hover_more" className="col-start-2 row-start-2 grid grid-cols-2 grid-rows-2 gap-1">
                         <div id="hover_items" className="hidden justify-center items-center col-start-1 rounded-xl col-span-2 row-start-1 row-span-2 h-full w-full bg-[#030712] opacity-75">
                             <h4 id="show_more" className="cursor-pointer border border-solid border-white rounded-full px-2 py-1 hover:bg-white hover:transition-transform hover:text-[#030712]">mehr ...</h4>
                         </div>
-                        <img className="col-start-1 row-start-1 rounded-xl aspect-square object-cover h-full w-full bg-white" src="../imgs/5.png" alt="" />
-                        <img className="col-start-2 row-start-1 rounded-xl aspect-square object-cover h-full w-full bg-white" src="../imgs/6.png" alt="" />
-                        <img className="col-start-1 row-start-2 rounded-xl aspect-square object-cover h-full w-full bg-white" src="../imgs/7.png" alt="" />
-                        <img className="col-start-2 row-start-2 rounded-xl aspect-square object-cover h-full w-full bg-white" src="../imgs/8.png" alt="" />
+                        <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-xl aspect-square object-cover h-full w-full" src="/imgs/5.png" alt="5" />
+                        <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-xl aspect-square object-cover h-full w-full" src="/imgs/6.png" alt="6" />
+                        <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-xl aspect-square object-cover h-full w-full" src="/imgs/7.png" alt="7" />
+                        <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-xl aspect-square object-cover h-full w-full" src="/imgs/8.png" alt="8" />
                     </div>
                 </div>
 
@@ -56,16 +56,16 @@ const Upload: React.FC = () => {
         <div id="media_more" className="hidden justify-center items-center w-full h-full pt-8">
             <div className="grid grid-cols-2 grid-rows-1 w-1/2 h-auto gap-4 p-4">
                 <div className="w-full h-full col-start-1 col-span-1 grid grid-cols-2 grid-rows-2 gap-4">
-                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/1.png" alt="1" />
-                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/2.png" alt="2" />
-                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/3.png" alt="3" />
-                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/4.png" alt="4" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/1.png" alt="1" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/2.png" alt="2" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/3.png" alt="3" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/4.png" alt="4" />
                 </div>
                 <div className="w-full h-full col-start-2 col-span-1 grid grid-cols-2 grid-rows-2 gap-4">
-                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/5.png" alt="5" />
-                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/6.png" alt="6" />
-                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/7.png" alt="7" />
-                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full bg-white" src="../imgs/8.png" alt="8" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/5.png" alt="5" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-1 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/6.png" alt="6" />
+                    <Image height={720} width={1280} className="col-start-1 row-start-2 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/7.png" alt="7" />
+                    <Image height={720} width={1280} className="col-start-2 row-start-2 rounded-2xl aspect-square object-cover h-full w-full" src="/imgs/8.png" alt="8" />
                 </div>
 
             </div>
