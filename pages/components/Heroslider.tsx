@@ -60,15 +60,15 @@ const CustomComponent: React.FC = () => {
 
         window.onmousedown = (e: MouseEvent): void => handleOnDown(e);
 
-        window.ontouchstart = (e: TouchEvent): void => handleOnDown(e.touches[0]);
+        // window.ontouchstart = (e: TouchEvent): void => handleOnDown(e.touches[0]);
+       
+         window.onmouseup = (e: MouseEvent): void => handleOnUp();
 
-        window.onmouseup = (e: MouseEvent): void => handleOnUp(e);
-
-        window.ontouchend = (e: TouchEvent): void => handleOnUp(e.touches[0]);
+        // window.ontouchend = (e: TouchEvent): void => handleOnUp(e.touches[0]);
 
         window.onmousemove = (e: MouseEvent): void => handleOnMove(e);
 
-        window.ontouchmove = (e: TouchEvent): void => handleOnMove(e.touches[0]);
+        // window.ontouchmove = (e: TouchEvent): void => handleOnMove(e.touches[0]);
 
 
 
