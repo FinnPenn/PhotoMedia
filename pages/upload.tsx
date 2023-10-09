@@ -18,7 +18,6 @@ const Upload: React.FC = () => { return (
                 <span className="self-center text-black pt-2">.png, .jpg</span>
             </div>
         </div>
-        <UploadTest/>
     </div>
 );
 };
