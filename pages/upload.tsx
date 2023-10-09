@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/pages/layout/Navbar";
-import UploadTest from "@/pages/components/uploadTest";
 
 const Upload: React.FC = () => { return (
     <div>
