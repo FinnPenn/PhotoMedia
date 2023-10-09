@@ -21,15 +21,15 @@ const Upload: React.FC = () => {
 
         if (checkSite === '/') {
             console.log('Home')
-            home.classList.add("p-2", "bg-white", "text-black", "rounded-xl")
+            home.classList.add("bg-white", "text-slate-900", "hover-link")
         }
         else if (checkSite === '/upload') {
             console.log('Upload')
-            upload.classList.add("p-2", "bg-white", "text-black", "rounded-xl")
+            upload.classList.add("bg-white", "text-slate-900", "hover-link")
         }
         else if (checkSite === '/mediathek') {
             console.log('Mediathek');
-            media.classList.add("p-2", "bg-white", "text-black", "rounded-xl")
+            media.classList.add("bg-white", "text-slate-900", "hover-link")
         }
         else if (checkSite === '') {
             console.log('auch Home aber leer');
@@ -45,17 +45,23 @@ const Upload: React.FC = () => {
         <div className="relative z-10 w-full top-0">
             <ul className="flex justify-start items-center p-8 font-bold text-white">
                 <li>
-                    <Link id="Home" href="/" className="nav-item hover-link">Home</Link>
+                    <div id="Home" className="h-10 w-24 flex justify-center items-center rounded-xl">
+                        <Link href="/" className="nav-item">Home</Link>
+                    </div>
                 </li>
                 <li>
-                <Link id="Upload" href="/upload" className="nav-item hover-link">Upload</Link>
+                    <div id="Upload" className="h-10 w-24 flex justify-center items-center rounded-xl">
+                        <Link href="/upload" className="">Upload</Link>
+                    </div>
                 </li>
                 <li>
-                    <Link id="Media" href="/mediathek" className="nav-item hover-link">Mediathek</Link>
+                    <div id="Media" className="h-10 w-24 flex justify-center items-center rounded-xl">
+                        <Link href="/mediathek" className="nav-item">Mediathek</Link>
+                    </div>
                 </li>
             </ul>
         </div>
-);
+            );
 };
 
 export default Upload;

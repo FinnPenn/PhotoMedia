@@ -65,10 +65,24 @@ body {
     transition-duration: 500ms;
 }
 
+
+.hover-link {
+    animation-name: hover-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hover-in {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: white;
+    }
+}
+
 .hover-link:hover {
-    transform: scale(1.25);
-    transition: all;
-    transition-duration: 500ms;
+    
 }
 
 #image-track {
