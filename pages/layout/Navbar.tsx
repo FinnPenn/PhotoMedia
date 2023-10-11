@@ -3,9 +3,8 @@ import Link from 'next/link'
 
 const Upload: React.FC = () => {
  
-
     return (
-        <div className="bg-[#030712] text-white top-0 py-2 px-8">
+        <div className="bg-[#030712] text-white top-0 py-5 px-8">
             <div className="flex justify-between items-center">
                 <div className="flex justify-start">
                     <div id="Home" className="justify-self-start h-10 w-24 flex justify-center items-center font-bold">

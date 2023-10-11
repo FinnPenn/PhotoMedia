@@ -74,6 +74,10 @@ body {
     transition-duration: 500ms;
 }
 
+.text-additional {
+    text-shadow: 10px 10px 10px #0f0f0f;
+}
+
 
 .hover-link {
     animation-name: hover-in;
