@@ -1,65 +1,26 @@
-import React, {useEffect, useState} from "react";
+// import React, {useEffect, useState} from "react";
 import Link from 'next/link'
 
 const Upload: React.FC = () => {
-    // const [style, setStyle] = useState("bg-none text-white");
-    //
-    // const btn_active = () => {
-    //     setStyle("bg-white text-black p-2 rounded-xl");
-    //     console.log('test');
-    // };
-
-    useEffect(() => {
-
-        // const navItem = document.getElementsByClassName('nav-item');
-        const checkSite = window.location.pathname;
-        const home = document.getElementById('Home')!,
-              upload = document.getElementById('Upload')!,
-              media = document.getElementById('Media')!;
-        // console.log(checkSite);
-
-
-        if (checkSite === '/') {
-            console.log('Home')
-            home.classList.add("bg-white", "text-slate-900", "hover-link")
-        }
-        else if (checkSite === '/upload') {
-            console.log('Upload')
-            upload.classList.add("bg-white", "text-slate-900", "hover-link")
-        }
-        else if (checkSite === '/mediathek') {
-            console.log('Mediathek');
-            media.classList.add("bg-white", "text-slate-900", "hover-link")
-        }
-        else if (checkSite === '') {
-            console.log('auch Home aber leer');
-        }
-        else {
-            console.log('404')
-        }
-
-
-    }, []);
-
+ 
     return (
-        <div className="relative z-10 w-full top-0">
-            <ul className="flex justify-start items-center p-8 font-bold text-white">
-                <li>
-                    <div id="Home" className="h-10 w-24 flex justify-center items-center rounded-xl">
+        <div className="bg-[#030712] relative z-50 text-white top-0 py-5 px-8">
+            <div className="flex justify-between items-center">
+                <div className="flex justify-start">
+                    <div id="Home" className="justify-self-start h-10 w-24 flex justify-center items-center font-bold">
                         <Link href="/" className="nav-item">Home</Link>
                     </div>
-                </li>
-                <li>
-                    <div id="Upload" className="h-10 w-24 flex justify-center items-center rounded-xl">
-                        <Link href="/upload" className="">Upload</Link>
-                    </div>
-                </li>
-                <li>
-                    <div id="Media" className="h-10 w-24 flex justify-center items-center rounded-xl">
+                
+                    <div id="Media" className="justify-self-start h-10 w-24 flex justify-center items-center font-bold">
                         <Link href="/mediathek" className="nav-item">Mediathek</Link>
                     </div>
-                </li>
-            </ul>
+                </div>
+
+                <div id="Upload" className="justify-self-end h-9 w-20 rounded-lg flex justify-center items-center bg-white text-slate-800 font-bold">
+                    <Link href="/upload" className="">Upload</Link>
+                </div>
+            
+            </div>
         </div>
             );
 };

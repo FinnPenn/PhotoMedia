@@ -1,11 +1,11 @@
 import React from "react";
-import CustomComponent from './components/Heroslider';
+import Hero from './components/Hero';
 import Navbar from './layout/Navbar';
 
 const Page: React.FC = () => { return (
      <div>
          <Navbar/>
-        <CustomComponent />
+         <Hero />
     </div>
 );
 };
