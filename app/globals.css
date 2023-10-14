@@ -16,4 +16,6 @@
   }
 }
 
-
+.w-84 {
+  width: calc(theme(width.2) * 2 + theme(width.80));
+}
