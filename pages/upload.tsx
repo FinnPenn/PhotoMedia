@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "@/pages/layout/Navbar";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import ModalHeader from "./components/ModalHeader";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -38,9 +39,21 @@ const Upload: React.FC = () => { return (
                             <textarea className="w-80 h-32 px-2" name="description" id="description" required />
                             <br /><br />
 
-                        // TODO: Category Dropdown
-
-                            <input className="w-84 h-8 bg-transparent border border-solid border-dark text-dark rounded-lg flex justify-center items-center cursor-pointer hover:bg-dark hover:text-white transition ease-in-out delay-150" type="submit" value="Submit" />
+                        
+                            <div className="flex space-x-4">
+                            <div className="flex flex-col">
+                                <div className="flex items-center justify-center w-40 h-8 bg-transparent border border-dark border-solid rounded-lg">
+                                    <p>Choose Category</p>
+                                    <FontAwesomeIcon className="pl-2" size="xs" icon={faChevronDown}/>
+                                </div>
+                                <div className="w-40 h-auto pb-1 bg-white border border-solid border-dark rounded-b-lg">
+                                    <p className="w-40 h-8 bg-white hover:bg-gray-200">Cyberpunk 2077</p>
+                                    <p className="w-40 h-8 bg-white hover:bg-gray-200">AC: Mirage</p>    
+                                </div> 
+                            </div>
+                            <input className="w-40 h-8 bg-dark border border-solid border-dark text-white font-bold rounded-lg flex justify-center items-center cursor-pointer" type="submit" value="Submit" />
+                                
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -48,6 +61,7 @@ const Upload: React.FC = () => { return (
                 
             </div>
         </div>
+        
     </div>
 );
 };
