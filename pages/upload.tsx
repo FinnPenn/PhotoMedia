@@ -12,7 +12,17 @@ function nextPage() {
     document.getElementById('formpage-2')!.style.display = "block";
     // document.getElementById('arrow-left')!.classList.remove = "hidden !important";
     document.getElementById('modal-pagination')!.innerHTML = "2 / 2";
-  } 
+  }
+  
+  function showDropdown() {
+    const dropdown = document.getElementById('dropdown-content')!;
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none"
+    }
+    else {
+        dropdown.style.display = "block"
+    }
+  }
 
 const Upload: React.FC = () => { return (
     <div>
@@ -41,12 +51,12 @@ const Upload: React.FC = () => { return (
 
                         
                             <div className="flex space-x-4">
-                            <div className="flex flex-col">
-                                <div className="flex items-center justify-center w-40 h-8 bg-transparent border border-dark border-solid rounded-lg">
-                                    <p>Choose Category</p>
-                                    <FontAwesomeIcon className="pl-2" size="xs" icon={faChevronDown}/>
-                                </div>
-                                <div className="w-40 h-auto pb-1 bg-white border border-solid border-dark rounded-b-lg">
+                                <div className="flex-col" onClick={showDropdown}>
+                                    <div className="flex pointer-events-none items-center justify-center w-40 h-8 bg-transparent border border-dark border-solid rounded-lg">
+                                        <p>Choose Category</p>
+                                        <FontAwesomeIcon className="pl-2" size="xs" icon={faChevronDown}/>
+                                    </div>
+                                <div id="dropdown-content" className="hidden fixed w-40 h-auto pb-1 bg-white border border-solid border-dark rounded-b-lg">
                                     <p className="w-40 h-8 bg-white hover:bg-gray-200">Cyberpunk 2077</p>
                                     <p className="w-40 h-8 bg-white hover:bg-gray-200">AC: Mirage</p>    
                                 </div> 
