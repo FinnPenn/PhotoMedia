@@ -12,7 +12,7 @@ interface DisplayFormDataProps {
 }
 
 const DisplayFormData: React.FC<DisplayFormDataProps> = ({ formData }) => {
-  return (
+  if (formData) {return (
     <div>
       <p className="text-gray-700 font-semibold">Displaying Form Data:</p>
       <p>Name: {formData.name}</p>
@@ -20,6 +20,13 @@ const DisplayFormData: React.FC<DisplayFormDataProps> = ({ formData }) => {
       <p>Source (src): {formData.src}</p>
     </div>
   );
+} else {
+    return (
+      <div>
+        <p>Data not available or name is undefined.</p>
+      </div>
+    );
+  }
 };
 
 export default DisplayFormData;
