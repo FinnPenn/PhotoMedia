@@ -45,7 +45,7 @@ const FormTesting: React.FC = () => {
         reader.onload = (event) => {
           setFormData({
             ...formData,
-            file: event.target.result as string,
+            file: event.target?.result as string,
             fileURL: URL.createObjectURL(file), // Store the file URL
           });
         };
