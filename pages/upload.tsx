@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import ModalHeader from "./components/ModalHeader";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import FileUpload from "./components/FileUpload"; // Import the FileUpload component
+
 
 
 
@@ -62,7 +64,7 @@ const Upload: React.FC = () => { return (
                                 </div> 
                             </div>
                             <input className="w-40 h-8 bg-dark border border-solid border-dark text-white font-bold rounded-lg flex justify-center items-center cursor-pointer" type="submit" value="Submit" />
-                                
+                            <FileUpload />
                             </div>
                         </div>
                     </form>
