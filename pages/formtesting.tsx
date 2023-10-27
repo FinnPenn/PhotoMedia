@@ -1,5 +1,6 @@
 // FormTesting.tsx
 import React, { useState, useEffect } from "react";
+import FileUpload from "./components/FileUpload"; // Import the FileUpload component
 
 interface FormData {
   name: string;
@@ -94,6 +95,7 @@ const FormTesting: React.FC = () => {
                 </p>
               )}
             </div>
+            <FileUpload /> {/* Include the FileUpload component */}
             <button
               onClick={handleRemoveData}
               className="mt-4 w-full bg-red-500 text-white rounded-md py-2 font-semibold hover:bg-red-600"
@@ -142,25 +144,26 @@ const FormTesting: React.FC = () => {
                 className="w-full border-2 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:border-blue-500"
               />
             </div>
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <label htmlFor="file" className="block text-gray-700 font-semibold">
                 Upload File (PNG or JPG only):
-              </label>
-              <input
+              </label> */}
+              {/* <input
                 type="file"
                 id="file"
                 name="file"
                 onChange={handleFileChange}
                 accept=".jpg, .jpeg, .png" // Specify accepted file types
                 className="w-full border-2 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:border-blue-500"
-              />
-            </div>
-            <button
+              /> */}
+            {/* </div> */}
+            <FileUpload /> {/* Include the FileUpload component */}
+            {/* <button
               type="submit"
               className="w-full bg-blue-500 text-white rounded-md py-2 font-semibold hover-bg-blue-600"
             >
               Submit
-            </button>
+            </button> */}
           </form>
         )}
       </div>
