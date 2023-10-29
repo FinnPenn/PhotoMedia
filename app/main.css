@@ -129,6 +129,10 @@ body {
     animation-fill-mode: forwards;
 }
 
+.backdrop-blur-md {
+backdrop-filter: blur(12px);
+}
+
 @keyframes toggler {
     from {  left: 0  }
     to   {  left: calc(100% - 1.75rem) }
