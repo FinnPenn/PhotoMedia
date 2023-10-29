@@ -3,7 +3,7 @@ import Navbar from "@/pages/layout/Navbar";
 import TestComponent from "@/pages/components/TestComponent";
 import Image from 'next/image'
 
-const Upload: React.FC = () => { 
+const Mediathek: React.FC = () => { 
 
     useEffect(() => {
         
@@ -77,4 +77,4 @@ const Upload: React.FC = () => {
 );
 };
 
-export default Upload;
+export default Mediathek;

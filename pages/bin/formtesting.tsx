@@ -1,6 +1,6 @@
 // FormTesting.tsx
 import React, { useState, useEffect } from "react";
-import FileUpload from "./components/FileUpload"; // Import the FileUpload component
+import FileUpload from "../components/FileUpload"; // Import the FileUpload component
 
 interface FormData {
   name: string;

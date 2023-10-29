@@ -2,11 +2,9 @@ import React from "react";
 import Navbar from "@/pages/layout/Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import ModalHeader from "./components/ModalHeader";
+import ModalHeader from "../components/ModalHeader";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import FileUpload from "./components/FileUpload"; // Import the FileUpload component
-
-
+import FileUpload from "../components/FileUpload"; // Import the FileUpload component
 
 
 function nextPage() {
@@ -26,9 +24,14 @@ function nextPage() {
     }
   }
 
-const Upload: React.FC = () => { return (
-    <div>
-        <Navbar/>
+  interface UploadProps {
+    className?: string; // The className prop is optional
+    id?: string;
+  }
+  
+  function Upload({ className, id }: UploadProps) {
+    return (
+    <div id={`${id || ''}`} className={`bg-dark/90 w-full h-full z-50 absolute ${className || ''}`}>
         <div className="flex justify-center items-center pt-32">
             <div className="w-1/4 h-96 rounded-xl shadow-xl shadow-gray-800 bg-white flex flex-col items-center py-8">
             <ModalHeader/>
