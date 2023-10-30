@@ -7,22 +7,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import FileUpload from "../components/FileUpload"; // Import the FileUpload component
 
 
-function nextPage() {
-    document.getElementById('formpage-1')!.style.display = "none";
-    document.getElementById('formpage-2')!.style.display = "block";
-    // document.getElementById('arrow-left')!.classList.remove = "hidden !important";
-    document.getElementById('modal-pagination')!.innerHTML = "2 / 2";
-  }
-  
-  function showDropdown() {
-    const dropdown = document.getElementById('dropdown-content')!;
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none"
-    }
-    else {
-        dropdown.style.display = "block"
-    }
-  }
+
 
   interface UploadProps {
     className?: string; // The className prop is optional
@@ -35,7 +20,7 @@ function nextPage() {
         <div className="flex justify-center items-center pt-32">
             <div className="w-1/4 h-96 rounded-xl shadow-xl shadow-gray-800 bg-white flex flex-col items-center py-8">
             <ModalHeader/>
-                <div id="formwrapper" className="flex justify-center items-center w-full h-full">
+                {/* <div id="formwrapper" className="flex justify-center items-center w-full h-full">
                     <form action="process_form.php" method="post" encType="multipart/form-data">
                         <div id="formpage-1" className="flex flex-col items-center space-y-4">
                             <div className="border-2 border-black border-dashed w-84 h-64 flex justify-center items-center flex-col space-y-10">
@@ -71,7 +56,9 @@ function nextPage() {
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> */}
+
+                <FileUpload />
             
                 
             </div>

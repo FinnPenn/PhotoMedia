@@ -130,7 +130,8 @@ body {
 }
 
 .backdrop-blur-md {
-backdrop-filter: blur(12px);
+backdrop-filter: blur(16px);
+
 }
 
 @keyframes toggler {
