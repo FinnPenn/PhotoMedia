@@ -67,3 +67,19 @@ app.post("/saveData", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+app.get("/fetchData", (req, res) => {
+  const jsonFilePath = path.join(__dirname, "data", "data.json");
+
+  try {
+    if (fs.existsSync(jsonFilePath)) {
+      const jsonData = JSON.parse(fs.readFileSync(jsonFilePath));
+      res.json(jsonData);
+    } else {
+      res.json([]); // Return an empty array if the file doesn't exist
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch data" });
+    console.error("Error fetching data:", error);
+  }
+});

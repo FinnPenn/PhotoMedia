@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Upload from '../bin/upload';
+import Upload from '../components/main/upload/upload';
 
 
 function toggleupload() {
