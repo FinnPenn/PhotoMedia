@@ -4,24 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
+
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Cyberpunk 2077"); // Initial value
+  const [originalFileName, setOriginalFileName] = useState(""); // Add img name
+
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
-    // console.log(e.target.files[0].name);
     var filename = e.target.files[0].name;
     document.getElementById('display-file').innerHTML = filename;
   };
+
 
   const handleInputChange = (e) => {
     if (e.target.name === "input1") {
       setInput1(e.target.value);
     } else if (e.target.name === "input2") {
       setInput2(e.target.value);
-    }
+    } else {console.log("error404");}
   };
 
   const handleUpload = async () => {
@@ -33,6 +37,9 @@ const FileUpload = () => {
         await axios.post("http://localhost:5000/upload", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
+        // Extract the original file name from the response and store it
+        const originalFileName = response.data.originalFileName;
+        setOriginalFileName(originalFileName);
         alert("File uploaded successfully");
       } catch (error) {
         console.error("Error uploading file:", error);
@@ -41,12 +48,19 @@ const FileUpload = () => {
   };
 
   const handleSaveData = async () => {
-    const data = {
-      input1,
-      input2,
-    };
-
     try {
+      // Ensure the file is uploaded before saving the data
+      await handleUpload();
+
+      // Now 'originalFileName' should be available
+      const data = {
+        input1,
+        input2,
+        category: selectedCategory,
+        originalFileName: originalFileName,
+      };
+
+      // Proceed to save the data
       await axios.post("http://localhost:5000/saveData", data);
       alert("Data saved successfully");
     } catch (error) {
@@ -54,6 +68,12 @@ const FileUpload = () => {
     }
   };
 
+
+  function catClicked(event) {
+    var thisHtml = event.target.innerHTML;
+    // console.log(thisHtml);
+    document.getElementById('choosecat').innerHTML = thisHtml;
+  }
 
   function nextPage() {
     document.getElementById('formpage-1').style.display = "none";
@@ -74,7 +94,6 @@ const FileUpload = () => {
 
 
   return (
-
 
 
           <div id="formwrapper" className="flex justify-center items-center w-full h-full">
@@ -117,45 +136,53 @@ const FileUpload = () => {
                             <div className="flex space-x-4">
                                 <div className="flex-col" onClick={showDropdown}>
                                     <div className="flex pointer-events-none items-center justify-center w-40 h-8 bg-transparent border border-dark border-solid rounded-lg">
-                                        <p>Choose Category</p>
+                                        <p id="choosecat">Choose Category</p>
                                         <FontAwesomeIcon className="pl-2" size="xs" icon={faChevronDown}/>
                                     </div>
                                 <div id="dropdown-content" className="hidden fixed w-40 h-auto pb-1 bg-white border border-solid border-dark rounded-b-lg">
-                                    <p className="w-40 h-8 bg-white hover:bg-gray-200">Cyberpunk 2077</p>
-                                    <p className="w-40 h-8 bg-white hover:bg-gray-200">AC: Mirage</p>    
+                                    <div className="w-40 h-8 bg-white hover:bg-gray-200">
+                                      <label onClick={catClicked}>Cyberpunk 2077</label>
+                                      <input 
+                                        type="button" 
+                                      />
+                                    </div>
+                                    <div className="w-40 h-8 bg-white hover:bg-gray-200">
+                                      <label onClick={catClicked}>AC: Mirage</label>
+                                      <input 
+                                        type="button" 
+                                      />
+                                    </div>
                                 </div> 
                             </div>
+
+                            <div className="radio-group">
+                              <p>Choose Category:</p><br />
+
+                              <input
+                                type="radio"
+                                name="category"
+                                value="Cyberpunk 2077"
+                                checked={selectedCategory === "Cyberpunk 2077"}
+                                onChange={() => setSelectedCategory("Cyberpunk 2077")}
+                              />
+                              <label htmlFor="cyberpunk">Cyberpunk 2077</label><br />
+
+                              <input
+                                type="radio"
+                                name="category"
+                                value="AC: Mirage"
+                                checked={selectedCategory === "AC: Mirage"}
+                                onChange={() => setSelectedCategory("AC: Mirage")}
+                              />
+                              <label htmlFor="mirage">AC: Mirage</label><br />
+                          </div>
+
                             <input  
                                 onClick={() => { handleSaveData(); handleUpload(); }} 
                                 className="w-40 h-8 bg-dark border border-solid border-dark text-white font-bold rounded-lg flex justify-center items-center cursor-pointer" 
                                 type="submit" 
                                 value="Submit" 
                             />
-                            
-
-                            {/* Start Komponente */}
-
-                            {/* <div> */}
-                              {/* <input type="file" accept=".jpg, .jpeg, .png" onChange={handleFileChange} /> */}
-                              
-                              {/* <input
-                                type="text"
-                                name="input1"
-                                placeholder="Input 1"
-                                value={input1}
-                                onChange={handleInputChange}
-                              /> */}
-                              {/* <input
-                                type="text"
-                                name="input2"
-                                placeholder="Input 2"
-                                value={input2}
-                                onChange={handleInputChange}
-                              /> */}
-                              {/* <button onClick={() => { handleSaveData(); handleUpload(); }}>Save Data</button> */}
-                            {/* </div> */}
-
-                            {/* Ende Komponente */}
 
                             </div>
                         </div>

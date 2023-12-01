@@ -33,7 +33,9 @@ app.get("/upload", (req, res) => {
 
 app.post("/upload", upload.single("file"), (req, res) => {
   // File has been uploaded and saved to the specified directory
-  res.sendStatus(200); // Respond with a 200 status code
+  const originalFileName = req.file.originalname;
+  res.json({ originalFileName });
+  // res.sendStatus(200); // Respond with a 200 status code
   console.log("File uploaded successfully");
 });
 
