@@ -9,9 +9,8 @@ const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Cyberpunk 2077"); // Initial value
-  const [originalFileName, setOriginalFileName] = useState(""); // Add img name
-
+  const [selectedCategory, setSelectedCategory] = useState("Cyberpunk 2077");
+  const [originalFileName, setOriginalFileName] = useState("");
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -19,50 +18,59 @@ const FileUpload = () => {
     document.getElementById('display-file').innerHTML = filename;
   };
 
-
   const handleInputChange = (e) => {
     if (e.target.name === "input1") {
       setInput1(e.target.value);
     } else if (e.target.name === "input2") {
       setInput2(e.target.value);
-    } else {console.log("error404");}
-  };
-
-  const handleUpload = async () => {
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      try {
-        await axios.post("http://localhost:5000/upload", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
-        // Extract the original file name from the response and store it
-        const originalFileName = response.data.originalFileName;
-        setOriginalFileName(originalFileName);
-        alert("File uploaded successfully");
-      } catch (error) {
-        console.error("Error uploading file:", error);
-      }
+    } else {
+      console.log("error404");
     }
   };
 
-  const handleSaveData = async () => {
+  const handleUpload = async () => {
     try {
-      // Ensure the file is uploaded before saving the data
-      await handleUpload();
+      if (file) {
+        const formData = new FormData();
+        formData.append("file", file);
 
-      // Now 'originalFileName' should be available
-      const data = {
-        input1,
-        input2,
-        category: selectedCategory,
-        originalFileName: originalFileName,
-      };
+        const response = await axios.post("http://localhost:5000/upload", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
 
-      // Proceed to save the data
-      await axios.post("http://localhost:5000/saveData", data);
-      alert("Data saved successfully");
+        // Extract the original file name from the response
+        const originalFileName = response.data.originalFileName;
+        console.log("Original File Name:", originalFileName);
+
+        // Call handleSaveData with the originalFileName
+        handleSaveData(originalFileName);
+
+        alert("File uploaded successfully");
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
+
+  const handleSaveData = async (uploadedFileName) => {
+    try {
+      // Ensure 'originalFileName' is available before saving the data
+      if (uploadedFileName) {
+        const data = {
+          input1,
+          input2,
+          category: selectedCategory,
+          originalFileName: uploadedFileName,
+        };
+
+        console.log("Data to be saved:", data);
+
+        // Proceed to save the data
+        await axios.post("http://localhost:5000/saveData", data);
+        alert("Data saved successfully");
+      } else {
+        console.error("originalFileName is empty");
+      }
     } catch (error) {
       console.error("Error saving data:", error);
     }
